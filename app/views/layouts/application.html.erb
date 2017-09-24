@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Debate</title>
-    <%= csrf_meta_tags %>
+	<title>Debate</title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   </head>
 
   <body>
-    <%= yield %>
+	<nav class="blue lighten-2">
+	  <div class="nav-wrapper">
+		<a href="#" class="brand-logo">Debating Society</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+		  <li><a href="sass.html">Home</a></li>
+		  <li><a href="badges.html">Debate</a></li>
+		  <li><a href="collapsible.html">Sign In / Sign Up</a></li>
+		</ul>
+	  </div>
+	</nav>
+  
+	<%= yield %>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>
