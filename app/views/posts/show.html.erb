@@ -1,0 +1,16 @@
+<h1><%=@post.title%></h1>
+<div class="fort">
+<h3>For the motion</h3>
+<%@post.fors.each do |f|%>
+	<p><%=f.content%></p>
+<%end%> 
+  <%= render "fors/form"%>
+  </div>
+<div class="against">
+	<h3>Against the motion</h3>
+	<%@post.againsts.each do |f|%>
+		<p><%=f.content%></p>
+	<%end%> 
+
+	  <%= render "againsts/form"%>
+</div>

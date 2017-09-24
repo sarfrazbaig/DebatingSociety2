@@ -1,0 +1,12 @@
+<%= form_for([@post, @post.againsts.build]) do |f| %>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <br>
+  <p>
+    <%=f.submit%>
+  </p>
+
+<%end%>
