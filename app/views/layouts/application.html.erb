@@ -10,35 +10,34 @@
   </head>
 
   <body>
+	  <div id="modal1" class="modal">
+	    <div class="modal-content center">
+	    <h4>Sign Up</h4>
+	    <p>Sign up with your social media account to debate and add your own topics</p>
+	     <%= link_to 'Twitter', '/auth/twitter', :class => "btn twitter"%>	
+          	     <%= link_to 'Facebook', '/auth/facebook',:class =>"btn facebook" %>
+	    </div>
+	  </div>
+
 	<nav class="blue lighten-2">
 	  <div class="nav-wrapper">
 		<a href="#" class="brand-logo">Debating Society</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-		  <li><a href="#">Home</a></li>
-		  <li><a href="#">Debate</a></li>
-		  <li><a href="#">Sign In / Sign Up</a></li>
+		  <li><%= link_to "Home", root_path%></li>
+		  <li><%= link_to "Debate", posts_path%></li>
 
 		  <% if current_user %>
           		<li><%= image_tag current_user.image_url, alt: current_user.name %></li>
           		<li><%= link_to 'Log Out', logout_path, method: :delete %></li>
         
       		<% else %>
-          		<li><%= link_to 'Twitter', '/auth/twitter' %></li>
-          		<li><%= link_to 'Facebook', '/auth/facebook' %></li>
+		  <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sign In / Sign Up</a></li>
           		 <% end %>
         		</ul>
      		
 	  </div>
 	</nav>
-	<div class="container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <%= value %>
-    </div>
-  <% end %>
-  
 	<%= yield %>
-	</div>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>
