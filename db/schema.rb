@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924215358) do
+ActiveRecord::Schema.define(version: 20170924224225) do
 
   create_table "againsts", force: :cascade do |t|
     t.integer  "post_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170924215358) do
     t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["uid"], name: "index_users_on_uid"
