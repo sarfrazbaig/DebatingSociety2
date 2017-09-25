@@ -3,6 +3,7 @@
 <h3>For the motion</h3>
 <%@post.fors.each do |f|%>
 	<p><%=f.content%></p>
+	<p><%=f.user.name%></p>
 <%end%> 
   <%= render "fors/form"%>
   </div>
@@ -10,6 +11,7 @@
 	<h3>Against the motion</h3>
 	<%@post.againsts.each do |f|%>
 		<p><%=f.content%></p>
+		<p><%= f.user.name%></p>
 	<%end%> 
 
 	  <%= render "againsts/form"%>

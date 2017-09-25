@@ -1,3 +1,5 @@
 class For < ApplicationRecord
-  belongs_to :post
+  validates :user, presence: true
+  belongs_to :post, optional: true
+  belongs_to :user,optional: true 
 end
