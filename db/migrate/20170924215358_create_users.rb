@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :uid, null: false
       t.string :name
       t.string :image_url
-      t.string :url
+      # t.string :url
       t.timestamps
     end
     # Always add this add index below the create action
