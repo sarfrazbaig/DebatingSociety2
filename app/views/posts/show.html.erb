@@ -1,18 +1,32 @@
 <h1><%=@post.title%></h1>
+ 
+
+
 <div class="fort">
 <h3>For the motion</h3>
-<%@post.fors.each do |f|%>
-	<p><%=f.content%></p>
-	<p><%=f.user.name%></p>
+<% if @post.fors.count>0%>
+<%@post.fors.each do |post_for|%>
+	<p><%=post_for.content%></p>
+	<p><%=post_for.user.name%></p>
 <%end%> 
-  <%= render "fors/form"%>
+    <%else%>
+    <h4>No for comments till now</h4>
+    <%end%>      
+    <%= render "fors/form", fors: @user%>
   </div>
+
+
 <div class="against">
 	<h3>Against the motion</h3>
-	<%@post.againsts.each do |f|%>
+      <% if @post.againsts.count>0%>
+	     <%@post.againsts.each do |f|%>
 		<p><%=f.content%></p>
 		<p><%= f.user.name%></p>
 	<%end%> 
+      <%else%>
+          <h4>No against comments till now</h4>
+          <%end%>	
+         <%= render "againsts/form"%>
 
-	  <%= render "againsts/form"%>
 </div>
+
